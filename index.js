@@ -14,14 +14,14 @@ const noContributors  = "This project is currently not accepting any contributio
 
 // array of questions for user
 const questions = [
-   {type: "input", message: "What is the title of your project?", name: "Title"},
-   {type: "input", message: "Please provide a description of your project:", name: "Description"},
-   {type: "input", message: "Please provide any installations needed for your project:", name: "Installations"},
-   {type: "input", message: "Please provide the usage for your project:", name: "Usage"},
-   {type: "list", message: "Please provide any licenses needed for your project:", name: "License", choices: ["Apache License 2.0", "GNU GPLv3", "MIT", "ISC","None"]},
-   {type: "input", message: "Please provide any collaborators:", name: "Credits"},
-   {type: "input", message: "Please provide commands for tests:", name: "Test"},
-   {type: "input", message: "Please provide ways for contribution:", name: "Contributing"}
+   {type: "input", message: "What is the title of your project?", name: "title"},
+   {type: "input", message: "Please provide a description of your project:", name: "description"},
+   {type: "input", message: "Please provide any installations needed for your project:", name: "installations"},
+   {type: "input", message: "Please provide the usage for your project:", name: "usage"},
+   {type: "list", message: "Please provide any licenses needed for your project:", name: "license", choices: ["Apache License 2.0", "GNU GPLv3", "MIT", "ISC","None"]},
+   {type: "input", message: "Please provide any collaborators:", name: "credits"},
+   {type: "input", message: "Please provide commands for tests:", name: "test"},
+   {type: "input", message: "Please provide ways for contribution:", name: "contributors"}
 ];
 
 // function to write README file
