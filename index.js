@@ -35,8 +35,39 @@ function writeToFile(fileName, data) {
 }
 
 // function to initialize program
-function init() {
+async function init() {
+   try {
+       // asks user questions
+       await inquirer.prompt(questions).then(function(response){
+           return responses = response;
+       });
 
+       // check for which license
+       if(responses.license === "Apache License 2.0"){
+           responses.license = apache;
+       } else if(responses.license === "GNU GPLv3"){
+           responses.license = gnu;
+       } else if(responses.license === "MIT"){
+           responses.license = mit;
+       } else if(responses.license === "ISC"){
+           responses.license = isc;
+       } else {
+           responses.license = "This project is currently not licensed."
+       }
+
+       // check to see if user wants contributors
+       if(responses.contributors === "Yes"){
+           responses.contributors = yesContributors;
+       } else {
+           responses.contributors = noContributors;
+       }
+
+       // write data to readme using generateMarkdown
+       writeToFile(`generatedREADME.md`, generateMarkdown(responses));
+
+   } catch (err){
+       console.log(err);
+   }
 }
 
 // function call to initialize program
